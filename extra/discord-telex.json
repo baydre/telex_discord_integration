@@ -1,0 +1,15 @@
+{
+    "app_name": "Discord Webhook Integration",
+    "app_description": "Forwards messages from Telex to a Discord channel via webhook.",
+    "app_url": "https://github.com/baydre/telex_discord_integration",
+    "integration_type": "output",
+    "integration_category": "Communication & Collaboration",
+    "settings": {
+      "webhook_url": {
+        "type": "string",
+        "default": "",
+        "description": "Enter your Discord webhook URL."
+      }
+    },
+    "target_url": "https://your-server.com/telex-to-discord"
+  }
