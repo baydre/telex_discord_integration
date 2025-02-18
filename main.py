@@ -31,3 +31,7 @@ async def telex_webhook(request: Request):
         return {"status": "Message sent successfully"}
     else:
         return {"status": "Failed to send message", "error": response.text}
+    
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
