@@ -42,7 +42,7 @@ This project integrates Telex with Discord by forwarding messages received from 
 
 2. Configure Telex to send POST requests to the `/telex-webhook` endpoint of your FastAPI application. The URL should look like this:
    ```
-   https://telex-discord-integration.onrender.com/telex_webhook
+   https://127.0.0.1:8000/telex_webhook
    ```
 
 3. Ensure the Telex webhook payload includes a `content` field in the JSON body:
