@@ -19,21 +19,21 @@ async def telex_webhook(request: Request):
     print(telex_message)
 
     # Prepare the message for Discord
-    # discord_message = {
-    #     "content": telex_message.get("content", "No content provided")
-    # }
+    discord_message = {
+        "content": telex_message.get("content", "No content provided")
+    }
 
-    # # Send the message to Discord
-    # response = requests.post(
-    #     DISCORD_WEBHOOK_URL,
-    #     data=json.dumps(discord_message),
-    #     headers={"Content-Type": "application/json"}
-    # )
+    # Send the message to Discord
+    response = requests.post(
+        DISCORD_WEBHOOK_URL,
+        data=json.dumps(discord_message),
+        headers={"Content-Type": "application/json"}
+    )
 
-    # if response.status_code == 204:
-    #     return {"status": "Message sent successfully"}
-    # else:
-    #     return {"status": "Failed to send message", "error": response.text}
+    if response.status_code == 204:
+        return {"status": "Message sent successfully"}
+    else:
+        return {"status": "Failed to send message", "error": response.text}
     
 if __name__ == "__main__":
     import uvicorn
