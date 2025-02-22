@@ -1,8 +1,6 @@
-import os
+import os, json
 import requests
 from fastapi import FastAPI, Request
-import json
-from dotenv import load_dotenv
 
 # Get environment variable (Render automatically provides it)
 DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
