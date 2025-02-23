@@ -1,4 +1,4 @@
-import os, json
+import os, json, logging
 import requests
 from fastapi import FastAPI, Request
 
@@ -6,6 +6,8 @@ from fastapi import FastAPI, Request
 DISCORD_WEBHOOK_URL = os.getenv("DISCORD_WEBHOOK_URL")
 
 app =FastAPI()
+
+logging.basicConfig(level=logging.INFO)
 
 @app.get("/health")
 async def health_check():
@@ -16,11 +18,13 @@ async def telex_webhook(request: Request):
     # Receive the message from Telex
     telex_message = await request.json()
 
-    print(telex_message)
+    # Log the received message
+    logging.info(f"Received message: {telex_message}")
+
 
     # Prepare the message for Discord
     discord_message = {
-        "content": telex_message.get("content", "No content provided")
+        "content": telex_message.get("content", "🚨 Alert! New Telex message"),
     }
 
     # Send the message to Discord
