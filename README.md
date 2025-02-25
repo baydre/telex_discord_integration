@@ -6,7 +6,7 @@ This project integrates Telex with Discord by forwarding messages received from 
 
 - Python 3.8 or higher
 - FastAPI
-- `python-dotenv` for managing environment variables
+- `python-dotenv` for managing environment variables `# During test phase`
 - `requests` library for making HTTP requests
 
 ## Installation
@@ -57,7 +57,7 @@ This project integrates Telex with Discord by forwarding messages received from 
 Here is an example configuration for the Telex webhook:
 ```json
 {
-    "url": "https://telex-discord-integration.onrender.com/telex_webhook",
+    "url": "https://your-app-url.com/telex_webhook",
     "method": "POST",
     "headers": {
         "Content-Type": "application/json"
